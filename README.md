@@ -2,7 +2,7 @@
 
 Welcome to the Lindsey Arc Website! This is a Progressive Web App (PWA) built using SvelteKit, Tailwind CSS, and MariaDB. It provides a platform for Lindsey Arc, to connect with her audience, share exclusive content, and manage subscriptions.
 
-This project is being created with the help of Claude AI by supplying it with the [Sveltekit Documentation](./docs/SvelteKit Documentation.md) and the [Lindsey Arc Website Requirements](./docs/lindsey-arc-website-requirements.md). Claude AI generated the basic code for the project entire website with the spec above, the full code here: [Full code response](./docs/codeByClaude.md)
+This project is being created with the help of Claude AI by supplying it with the [Sveltekit Documentation](./docs/sveltekit-documentation.md) and the [Lindsey Arc Website Requirements](./docs/lindsey-arc-website-requirements.md). Claude AI generated the basic code for the project entire website with the spec above, the full code here: [Full code response](./docs/codeByClaude.md)
 
 ## Features
 
