@@ -2319,22 +2319,22 @@ export default config;
 
 ```html
 <!-- file: src/app.html -->
-<!-- version: 1.0.1 -->
+<!-- version: 1.0.0 -->
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="utf-8" />
-        <link rel="icon" href="%sveltekit.assets%/favicon.png" />
-        <meta name="viewport" content="width=device-width" />
-        %sveltekit.head%
-        
-        <link rel="manifest" href="/manifest.json" />
-        <meta name="theme-color" content="#000000" />
-        <link rel="apple-touch-icon" href="/icon-192.png" />
-    </head>
-    <body data-sveltekit-preload-data="hover">
-        <div style="display: contents">%sveltekit.body%</div>
-    </body>
+
+<head>
+    <meta charset="utf-8" />
+    <link rel="icon" href="%sveltekit.assets%/favicon.png" />
+    <meta name="viewport" content="width=device-width" />
+    <link href="css/styles.css" rel="stylesheet">
+    %sveltekit.head%
+</head>
+
+<body data-sveltekit-preload-data="hover">
+    <div style="display: contents">%sveltekit.body%</div>
+</body>
+
 </html>
 ```
 

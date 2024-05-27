@@ -1,0 +1,50 @@
+// file: src/routes/blog/[id]/+page.server.js
+// version: 1.0.1
+
+import { error, json } from '@sveltejs/kit';
+import { pool } from '$lib/db.js';
+import { requireAuth } from '$lib/auth.js';
+
+/** @type {import('./$types').PageServerLoad} */
+export async function load({ params, request }) {
+    const [postRows] = await pool.query('SELECT * FROM posts WHERE id = ?', [params.id]);
+    
+    if (postRows.length === 0) {
+        throw error(404, 'Post not found');
+    }
+    
+    const [commentRows] = await pool.query('SELECT * FROM comments WHERE post_id = ? AND approved = TRUE', [params.id]);
+    
+    let user = null;
+    try {
+        user = await requireAuth(request);
+    } catch (err) {
+        // Ignore auth errors, just means user is not logged in
+    }
+    
+    return { 
+        post: postRows[0],
+        comments: commentRows,
+        user
+    };
+}
+
+/** @type {import('./$types').Actions} */
+export const actions = {
+    default: async ({ request, params }) => {
+        const user = await requireAuth(request);
+        
+        const data = await request.formData();
+        const content = data.get('content');
+        
+        // Validate input
+        if (!content) {
+            throw error(400, 'Comment content is required');
+        }
+        
+        // Insert comment
+        await pool.query('INSERT INTO comments (post_id, user_id, content) VALUES (?, ?, ?)', [params.id, user.id, content]);
+        
+        return json({ success: true, message: 'Comment submitted for approval' });
+    }
+};

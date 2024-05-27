@@ -1,0 +1,240 @@
+# Styling
+
+Finally and even though I am using Tailwind CSS I am still not sure about the look so I prompted Claude with the following:
+
+```
+Now finally give me a comprehensive stylesheet to style all the elements that might now look 100%, I want you to make sure it overwrites the styles that conflict with Tailwind, so remember to mark the ones that conflicts with Tailwind with "!". Make sure the entire website is super stylish using mostly black and white and high contrast photos. Choose a font from google fonts that si stylish and that will also look good for large headings
+```
+
+Here is the styles I added to `./src/styles.css` 
+
+```css
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap');
+
+body {
+  font-family: 'Playfair Display', serif;
+  background-color: #fff;
+  color: #000;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Playfair Display', serif;
+  font-weight: 700;
+}
+
+h1 {
+  font-size: 4rem !important;
+  margin-bottom: 2rem !important;
+}
+
+h2 {
+  font-size: 3rem !important;
+  margin-bottom: 1.5rem !important;
+}
+
+h3 {
+  font-size: 2.5rem !important;
+  margin-bottom: 1.25rem !important;
+}
+
+p {
+  font-size: 1.25rem !important;
+  line-height: 1.6 !important;
+}
+
+a {
+  color: #000 !important;
+  text-decoration: none !important;
+  border-bottom: 2px solid #000 !important;
+  transition: border-color 0.3s !important;
+}
+
+a:hover {
+  border-color: #888 !important;
+}
+
+.container {
+  max-width: 1200px !important;
+  margin: 0 auto !important;
+  padding: 2rem !important;
+}
+
+.header {
+  display: flex !important;
+  justify-content: space-between !important;
+  align-items: center !important;
+  padding: 2rem 0 !important;
+  border-bottom: 2px solid #000 !important;
+}
+
+.logo {
+  font-size: 2.5rem !important;
+  font-weight: 700 !important;
+}
+
+.nav ul {
+  display: flex !important;
+  list-style: none !important;
+}
+
+.nav li {
+  margin-left: 2rem !important;
+}
+
+.hero {
+  text-align: center !important;
+  padding: 6rem 0 !important;
+}
+
+.hero h1 {
+  font-size: 6rem !important;
+  margin-bottom: 1rem !important;
+}
+
+.hero p {
+  font-size: 1.5rem !important;
+  margin-bottom: 2rem !important;
+}
+
+.btn {
+  display: inline-block !important;
+  background-color: #000 !important;
+  color: #fff !important;
+  padding: 1rem 2rem !important;
+  font-size: 1.25rem !important;
+  border-radius: 0.25rem !important;
+  transition: background-color 0.3s !important;
+}
+
+.btn:hover {
+  background-color: #333 !important;
+}
+
+.featured-image {
+  width: 100% !important;
+  height: auto !important;
+  object-fit: cover !important;
+  margin-bottom: 2rem !important;
+}
+
+.post {
+  margin-bottom: 4rem !important;
+}
+
+.post h2 {
+  margin-bottom: 1rem !important;
+}
+
+.post-meta {
+  font-size: 1rem !important;
+  color: #888 !important;
+  margin-bottom: 1rem !important;
+}
+
+.comment {
+  margin-bottom: 2rem !important;
+  padding: 1rem !important;
+  background-color: #f8f8f8 !important;
+}
+
+.comment-author {
+  font-weight: 700 !important;
+  margin-bottom: 0.5rem !important;
+}
+
+.comment-content {
+  margin-bottom: 1rem !important;
+}
+
+.comment-date {
+  font-size: 0.875rem !important;
+  color: #888 !important;
+}
+
+.subscriber-content {
+  background-color: #000 !important;
+  color: #fff !important;
+  padding: 4rem 0 !important;
+}
+
+.subscriber-content h2 {
+  margin-bottom: 2rem !important;
+}
+
+.subscriber-content ul {
+  list-style: none !important;
+  margin-bottom: 2rem !important;
+}
+
+.subscriber-content li {
+  margin-bottom: 1rem !important;
+}
+
+.subscriber-content a {
+  color: #fff !important;
+  border-color: #fff !important;
+}
+
+.subscriber-content a:hover {
+  border-color: #ccc !important;
+}
+
+.form-group {
+  margin-bottom: 1.5rem !important;
+}
+
+.form-group label {
+  display: block !important;
+  font-size: 1.25rem !important;
+  margin-bottom: 0.5rem !important;
+}
+
+.form-control {
+  display: block !important;
+  width: 100% !important;
+  padding: 0.75rem !important;
+  font-size: 1.25rem !important;
+  border: 2px solid #000 !important;
+  border-radius: 0.25rem !important;
+}
+
+.form-control:focus {
+  outline: none !important;
+  border-color: #333 !important;
+}
+
+.alert {
+  padding: 1rem !important;
+  margin-bottom: 2rem !important;
+  border-radius: 0.25rem !important;
+}
+
+.alert-success {
+  background-color: #d4edda !important;
+  color: #155724 !important;
+  border-color: #c3e6cb !important;
+}
+
+.alert-error {
+  background-color: #f8d7da !important;
+  color: #721c24 !important;
+  border-color: #f5c6cb !important;
+}
+
+.footer {
+  text-align: center !important;
+  padding: 2rem 0 !important;
+  border-top: 2px solid #000 !important;
+  margin-top: 4rem !important;
+}
+```
+
+After I compile the styles with Tailwind CSS with the following command:
+```sh
+npx tailwindcss -i ./src/styles.css -o ./static/css/styles.css #--watch
+```
+
+Now a full stylesheet is created at `./static/css/styles.css`
+
+
+

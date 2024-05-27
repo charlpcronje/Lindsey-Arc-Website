@@ -4,6 +4,14 @@ Welcome to the Lindsey Arc Website! This is a Progressive Web App (PWA) built us
 
 This project is being created with the help of Claude AI by supplying it with the [Sveltekit Documentation](./docs/sveltekit-documentation.md) and the [Lindsey Arc Website Requirements](./docs/lindsey-arc-website-requirements.md). Claude AI generated the basic code for the project entire website with the spec above, the full code here: [Full code response](./docs/codeByClaude.md)
 
+Tailwind CSS was used, this can easily be added to a SvelteKit Project by following these instructions: [https://tailwindcss.com/docs/installation](https://tailwindcss.com/docs/installation)
+
+MariaDB is used for all persistent data:
+- [Queries to create the database](./docs/create-database.sql)
+- [Queries to create the database tables / foreign keys and indexes](./docs/create-database-tables.sql)
+
+What about the styling, I added some [custom styles here](./docs/styling.md)
+
 ## Features
 
 1. **User Registration and Authentication**: Users can create an account, log in, and manage their profile.
